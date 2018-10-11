@@ -6,7 +6,7 @@ export class ItemService {
   bcGatewayUrl: string;
 
   constructor(private http: HttpClient) {
-    this.bcGatewayUrl = 'https://ofs-bcgateway.herokuapp.com/';
+    this.bcGatewayUrl = 'https://bc-formrest.herokuapp.com/';
   }
 
   getItems() {
