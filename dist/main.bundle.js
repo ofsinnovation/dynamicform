@@ -731,7 +731,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var ItemService = /** @class */ (function () {
     function ItemService(http) {
         this.http = http;
-        this.bcGatewayUrl = 'https://ofs-bcgateway.herokuapp.com/';
+        this.bcGatewayUrl = 'https://bc-formrest.herokuapp.com/';
     }
     ItemService.prototype.getItems = function () {
         return this.http.get(this.bcGatewayUrl);
