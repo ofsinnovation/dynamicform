@@ -1,0 +1,8 @@
+{
+  "name": "Dynamic Form Builder",
+  "description": "Dynamic Form Builder Powered by OFS",
+  "repository": "https://github.com/ofsinnovation/dynamicform",
+  "keywords": ["node", "express"],
+  "env": {
+  }
+}
