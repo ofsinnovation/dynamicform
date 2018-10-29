@@ -37,7 +37,12 @@ export class ItemServiceComponent implements OnInit {
       data => {
         this.formFields = data;
         this.fieldsInfo = JSON.parse(this.formFields.value[0]);
-        this.jsonData = this.formFields.value[0];
+        const jsonObject = [];
+        for (const entry of Object.entries(this.fieldsInfo)) {
+          const  keyValue = {label: entry[0], value: entry[1]};
+          jsonObject.push(keyValue);
+        }
+        this.jsonData = jsonObject;
         this.form = new FormGroup({
           fields: new FormControl(JSON.stringify(this.fieldsInfo))
         });
