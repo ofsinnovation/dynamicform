@@ -737,7 +737,7 @@ var ItemService = /** @class */ (function () {
         return this.http.get(this.bcGatewayUrl);
     };
     ItemService.prototype.getFormFields = function (contractId, key) {
-        return this.http.get(this.bcGatewayUrl + contractId + '/' + key);
+        return this.http.get('formbuilder/' + contractId + '/' + key);
     };
     ItemService = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["A" /* Injectable */])(),

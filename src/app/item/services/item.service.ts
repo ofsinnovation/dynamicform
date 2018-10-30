@@ -14,6 +14,6 @@ export class ItemService {
   }
 
   getFormFields(contractId, key) {
-    return  this.http.get(this.bcGatewayUrl + contractId + '/' + key);
+    return  this.http.get('formbuilder/' + contractId + '/' + key);
   }
 }
