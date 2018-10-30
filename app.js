@@ -3,7 +3,7 @@ express = require('express');
 path = require('path')
 app = express();
 var request = require("request");
-var blockchainurl = process.env.BLOCKCHAIN_SERVICE_URL || 'http://localhost:8545';
+var blockchainurl = process.env.BLOCKCHAIN_GATEWAY_SERVICE_URL || 'http://localhost:8545';
 app.use(express.static(path.join(__dirname, 'dist')))
 app.use(function (req, res, next) {
 

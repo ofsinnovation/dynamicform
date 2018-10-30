@@ -4,8 +4,8 @@
   "repository": "https://github.com/ofsinnovation/dynamicform",
   "keywords": ["node", "express"],
   "env": {
-	"BLOCKCHAIN_SERVICE_URL": {
-      "description": "Use the Heroku App URL that has the Blockchain Add-On deployed and add '/blockchain' to that(ie. http://your-appname-here.herokuapp.com/blockchain)",
+	"BLOCKCHAIN_GATEWAY_SERVICE_URL": {
+      "description": "Use the Heroku App URL that has the Blockchain Gateway URL",
       "value" :""
     }
   }
