@@ -20,6 +20,7 @@ export class ItemServiceComponent implements OnInit {
   fieldsInfo: any;
   fields: any;
   jsonData: any;
+  validFormFieldData: any;
 
   constructor(private orderService: ItemService, private pagerService: PagerService, private router: Router) {}
 
@@ -37,12 +38,19 @@ export class ItemServiceComponent implements OnInit {
       data => {
         this.formFields = data;
         this.fieldsInfo = JSON.parse(this.formFields.value[0]);
-        const jsonObject = [];
-        for (const entry of Object.entries(this.fieldsInfo)) {
-          const  keyValue = {label: entry[0], value: entry[1]};
-          jsonObject.push(keyValue);
+        console.log('field info', this.fieldsInfo);
+        const formBuilderObject = [];
+        for (const formbuilderData of Object.entries(this.fieldsInfo)) {
+          this.validFormFieldData = formbuilderData[1];
         }
-        this.jsonData = jsonObject;
+        for (const formbuilderFields of Object.entries(this.validFormFieldData)) {
+          console.log('jsonEntry', formbuilderFields);
+          if (formbuilderFields[0] !== 'attributes') {
+            const  keyValue = {label: formbuilderFields[0], value: formbuilderFields[1]};
+            formBuilderObject.push(keyValue);
+           }
+        }
+        this.jsonData = formBuilderObject;
         this.form = new FormGroup({
           fields: new FormControl(JSON.stringify(this.fieldsInfo))
         });

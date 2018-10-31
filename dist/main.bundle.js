@@ -796,13 +796,21 @@ var ItemServiceComponent = /** @class */ (function () {
         this.orderService.getFormFields(contractId, key).subscribe(function (data) {
             _this.formFields = data;
             _this.fieldsInfo = JSON.parse(_this.formFields.value[0]);
-            var jsonObject = [];
+            console.log('field info', _this.fieldsInfo);
+            var formBuilderObject = [];
             for (var _i = 0, _a = Object.entries(_this.fieldsInfo); _i < _a.length; _i++) {
-                var entry = _a[_i];
-                var keyValue = { label: entry[0], value: entry[1] };
-                jsonObject.push(keyValue);
+                var formbuilderData = _a[_i];
+                _this.validFormFieldData = formbuilderData[1];
             }
-            _this.jsonData = jsonObject;
+            for (var _b = 0, _c = Object.entries(_this.validFormFieldData); _b < _c.length; _b++) {
+                var formbuilderFields = _c[_b];
+                console.log('jsonEntry', formbuilderFields);
+                if (formbuilderFields[0] !== 'attributes') {
+                    var keyValue = { label: formbuilderFields[0], value: formbuilderFields[1] };
+                    formBuilderObject.push(keyValue);
+                }
+            }
+            _this.jsonData = formBuilderObject;
             _this.form = new __WEBPACK_IMPORTED_MODULE_4__angular_forms__["b" /* FormGroup */]({
                 fields: new __WEBPACK_IMPORTED_MODULE_4__angular_forms__["a" /* FormControl */](JSON.stringify(_this.fieldsInfo))
             });
