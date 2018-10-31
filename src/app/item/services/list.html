@@ -1,8 +1,35 @@
 
+<header>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark" role="navigation">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">
+        <img src="assets/img/ofs.png" alt="" class="float-left"> &nbsp; Contract Data Renderer</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapse" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      <div class="collapse navbar-collapse" id="navbar-collapse">
+        <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+          <li class="nav-item mr-3">
+            <a href="#" class="nav-link">
+              <i class="icon-user"></i> Dan Harrison
+            </a>
+          </li>
+          <li class="nav-item is-separated">
+            <a href="#" class="nav-link">
+              <i class="icon-cog"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container-fluid -->
+  </nav>
+</header>
 <div class="container mt-3">
     <div class="card w-100">
       <div class="card-header h5">
-        Dynamic Form Data
+        Enter Contract Details
       </div>
       <div class="card-body">
         <div class="justify-content-between">
@@ -45,7 +72,7 @@
     <br />
     <div class="col-sm-12 no-padding" *ngIf="this.fieldsInfo">
         <div class="card">
-          <div class="card-header">Dynamic Forms</div>
+          <div class="card-header">Contract Data</div>
           <br />
           <form (ngSubmit)="onSubmit.emit(this.form.value)" [formGroup]="form" class="form-horizontal">
             <div *ngFor="let field of jsonData; let index = index" class="col-sm-12">

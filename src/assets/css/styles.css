@@ -302,12 +302,14 @@ body {
 .btn-success:not(:disabled):not(.disabled):active {
   background-color: #8cc152;
   border-color: #8cc152;
+  color: #ffffff !important;
 }
 
 .btn-success:focus,
 .btn-success:hover {
   background-color: #a0d468;
   border-color: #a0d468;
+  color: #ffffff !important;
 }
 
 .btn-danger,
@@ -328,13 +330,13 @@ body {
 }
 
 .navbar-dark .navbar-brand {
-  color: #8ebf52;
+  color: #FFF;
   font-weight: 500;
   font-size: 20px;
 }
 
 .bg-dark {
-  background-color: #262626 !important;
+  background-color: #182D52 !important;
 }
 
 .nav-item.is-separated {
